@@ -1,33 +1,32 @@
-name: Tự động cập nhật KQXS Miền Bắc hàng ngày
+name: Auto Update XSMB Daily
 
 on:
   schedule:
-    # Chạy tự động lúc 11:40 UTC và 12:00 UTC hàng ngày (tương đương 18:40 và 19:00 giờ Việt Nam)
     - cron: '40 11 * * *'
     - cron: '0 12 * * *'
-  workflow_dispatch: # Cho phép bấm nút chạy thủ công bất cứ lúc nào để kiểm tra
+  workflow_dispatch:
 
 permissions:
-  contents: write # Cấp quyền cho bot tự động lưu file JSON vào repo
+  contents: write
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Tải mã nguồn repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Cài đặt Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Chạy script cập nhật xsmb_result.json
+      - name: Run update script
         run: python update_xsmb.py
 
-      - name: Lưu và đẩy dữ liệu mới lên GitHub
+      - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@://github.com"
           git config --local user.name "github-actions[bot]"
           git add xsmb_result.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Cập nhật KQXS ngày mới" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update XSMB daily result" && git push)
