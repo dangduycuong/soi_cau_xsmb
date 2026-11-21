@@ -1,5 +1,7 @@
 # API Kết Quả Xổ Số Miền Bắc (XSMB JSON API) - Tự Động Cập Nhật Hàng Ngày
 
+> **API ket qua xo so mien bac (XSMB JSON API)** - Dữ liệu kết quả xổ số miền Bắc định dạng JSON miễn phí, tự động cập nhật lúc 18:35 mỗi ngày.
+
 Kho lưu trữ dữ liệu mở cung cấp **API Kết quả Xổ số Miền Bắc (XSMB)** định dạng **JSON** (2 số cuối từ Giải Đặc Biệt đến Giải Bảy), được tự động cập nhật hàng ngày lúc **18:35** ngay sau giờ quay thưởng.
 
 Dữ liệu phù hợp cho các lập trình viên làm ứng dụng di động (Flutter, React Native, Android, iOS), website thống kê, soi cầu, phân tích dữ liệu (Data Analysis) hoặc nghiên cứu xác suất.
