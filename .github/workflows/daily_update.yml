@@ -2,8 +2,9 @@ name: Auto Update XSMB Daily
 
 on:
   schedule:
-    # 18:37 và 19:07 giờ Việt Nam
+    # 11:37 UTC = 18:37 chiều giờ Việt Nam (GMT+7)
     - cron: '37 11 * * *'
+    # 12:07 UTC = 19:07 tối giờ Việt Nam (GMT+7)
     - cron: '7 12 * * *'
   workflow_dispatch:
 
